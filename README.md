@@ -94,7 +94,7 @@ This project is part of a broader family of FPGA-optimized time-series models. Y
 - **OnDevice-MLP** → [GitHub Repository](https://github.com/tianheng-ling/OnDeviceSoftSensorMLP)  
 - **OnDevice-LSTM** → [GitHub Repository](https://github.com/tianheng-ling/EdgeOverflowForecast)
 - **OnDevice-Transformer** → [GitHub Repository](https://github.com/tianheng-ling/TinyTransformer4TS)
-- **OnDevice-1D(Sep)CNN** → [GitHub Repository](https://github.com/tianheng-ling/smatable)
+- **OnDevice-1D(Sep)CNN** → [GitHub Repository](https://github.com/tianheng-ling/Smatable)
 
 ---
 
