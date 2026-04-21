@@ -20,17 +20,17 @@
 This paper introduces StrikeWatch, a compact wrist-worn system that performs entirely on-device, real-time gait recognition using IMU signals. As a case study, we target the detection of heel versus forefoot strikes to enable runners to self-correct harmful gait patterns through visual and auditory feedback during running. We propose four compact DL architectures (1D-CNN, 1D-SepCNN, LSTM, and Transformer) and optimize them for energy-efficient inference on two representative embedded Field-Programmable Gate Arrays (FPGAs): the AMD Spartan-7 XC7S15 and the Lattice iCE40UP5K.
 Using our custom-built hardware prototype, we collect a labeled dataset from outdoor running sessions and evaluate all models via a fully automated deployment pipeline. Our results reveal clear trade-offs between model complexity and hardware efficiency. Evaluated across 12 participants, 6-bit quantized 1D-SepCNN achieves the highest average F1 score of 0.847 while consuming just 0.350 $\mu$J per inference with a latency of 0.140 ms on the iCE40UP5K running at 20 MHz. This configuration supports up to 13.6 days of continuous inference on a 320 mAh battery.
 
-If you use the collected data or code, please consider citing our work:
+If you use the collected data or code, please consider citing our [work](https://arxiv.org/abs/2510.24738):
+
 ```bibtex
-@inproceedings{ling2025strikewatch,
-  title     = {StrikeWatch: Wrist-worn Gait Recognition with Compact Time-series Models on Low-power FPGAs},
-  author    = {Ling, Tianheng and Qian, Chao and Zdankin, Peter and Weis, Torben and Schiele, Gregor},
-  booktitle = {Proceedings of the IEEE Annual Congress on Artificial Intelligence of Things (IEEE AIoT)},
-  year      = {2025},
-  location  = {Osaka, Japan},
-  note      = {To appear},
-  url       = {https://arxiv.org/abs/YYYY}
-}
+@INPROCEEDINGS{11415717,
+  author={Ling, Tianheng and Qian, Chao and Zdankin, Peter and Weis, Torben and Schiele, Gregor},
+  booktitle={2025 IEEE Annual Congress on Artificial Intelligence of Things (AIoT)}, 
+  title={StrikeWatch: Wrist-worn Gait Recognition with Compact Time-series Models on Low-power FPGAs}, 
+  year={2025},
+  pages={66-74},
+  doi={10.1109/AIoT66900.2025.00021}}
+
 ```
 ---
 
@@ -91,11 +91,10 @@ Deployment scripts and bitstreams for both platforms are included.
 #### Related Repositories
 This project is part of a broader family of FPGA-optimized time-series models. You may also be interested in:
 
-- **OnDevice-MLP** → [GitHub Repository](https://github.com/tianheng-ling/OnDeviceSoftSensorMLP)  
-- **OnDevice-LSTM** → [GitHub Repository](https://github.com/tianheng-ling/EdgeOverflowForecast)
-- **OnDevice-Transformer** → [GitHub Repository](https://github.com/tianheng-ling/TinyTransformer4TS)
-- **OnDevice-1D(Sep)CNN** → [GitHub Repository](https://github.com/tianheng-ling/Smatable)
-
+- **On Device Flow Rate Forefasting with MLPs** → [GitHub Repository](https://github.com/tianheng-ling/OnDeviceSoftSensorMLP) 
+- **On Device Transformers across various time-series analysis tasks** → [GitHub Repository](https://github.com/tianheng-ling/TinyTransformer4TS) 
+- **On Device Swipe Direction Recognition with 1D(Sep)CNNs** → [GitHub Repository](https://github.com/tianheng-ling/Smatable)
+- **On Device Sewage Overflow Forefasting with Transforemrs and LSTMs** → [GitHub Repository](https://github.com/tianheng-ling/EdgeOverflowForecast)
 ---
 
 #### Acknowledgement
@@ -106,4 +105,4 @@ This work is supported by the German Federal Ministry for Economic Affairs and C
 #### Contact
 This repository is maintained by researchers from the Intelligent Embedded Systems Chair and Distributed Systems Chair at University of Duisburg-Essen, Germany.
 
-For questions or feedback, please feel free to open an issue or contact us at tianheng.ling@uni-due.de. If you are interested in our customized hardware, contact us at chao.qian@uni-due.de or peter.zdankin@uni-due.de.
+For questions or feedback, please feel free to open an issue or contact us at ling.tianheng@gmail.com. If you are interested in our customized hardware, contact us at chao.qian@uni-due.de or peter.zdankin@uni-due.de.
