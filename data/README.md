@@ -7,14 +7,13 @@ The **StrikeWatch dataset** was collected for running gait classification (foref
 For details on data collection, preprocessing, and model evaluation, please refer to the following paper:
 ```bibtex
 @inproceedings{ling2025strikewatch,
-  title     = {StrikeWatch: Wrist-worn Gait Recognition with Compact Time-series Models on Low-power FPGAs},
-  author    = {Ling, Tianheng and Qian, Chao and Zdankin, Peter and Weis, Torben and Schiele, Gregor},
-  booktitle = {Proceedings of the IEEE Annual Congress on Artificial Intelligence of Things (IEEE AIoT)},
-  year      = {2025},
-  location  = {Osaka, Japan},
-  note      = {To appear}
-  url       = {https://arxiv.org/abs/YYYY}
-}
+  author={Ling, Tianheng and Qian, Chao and Zdankin, Peter and Weis, Torben and Schiele, Gregor},
+  booktitle={2025 IEEE Annual Congress on Artificial Intelligence of Things (AIoT)}, 
+  title={StrikeWatch: Wrist-worn Gait Recognition with Compact Time-series Models on Low-power FPGAs}, 
+  year={2025},
+  pages={66-74},
+  keywords={Visualization;Transformers;Real-time systems;Hardware;Internet of Things;Wearable devices;Artificial intelligence;Gait recognition;Field programmable gate arrays;Software development management;Wrist-Worn Wearables;Running Gait Recognition;Time-Series Models;Model Quantization;On-Device Inference;Low-Power FPGA},
+  doi={10.1109/AIoT66900.2025.00021}}
 ```
 
 ##### License
