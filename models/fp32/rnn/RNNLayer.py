@@ -15,6 +15,7 @@ class RNNLayer(nn.Module):
         self.batch_size = kwargs.get("batch_size")
         self.cell_type = kwargs.get("cell_type")
 
+        assert self.cell_type in ["lstm"], "Only LSTM is supported for now."
         self.rnn_cell = LSTMCell(
             inputs_size=self.inputs_size, hidden_size=self.hidden_size
         )

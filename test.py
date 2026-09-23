@@ -78,7 +78,7 @@ def test(
 
     metrics = {f"{prefix}test_loss": test_loss}
     metrics.update(
-        get_classification_metrics(f"{prefix}test", test_preds, test_targets)
+        get_classification_metrics(phase=f"{prefix}test", preds=test_preds, targets=test_targets)
     )
 
     # log test results
@@ -103,7 +103,7 @@ def test(
 
     plot_confusion_matrix(
         labels=[item for sublist in test_targets for item in sublist],
-        preds=[item for sublist in test_targets for item in sublist],
+        preds=[item for sublist in test_preds for item in sublist],
         save_path=fig_save_dir,
         prefix=prefix,
     )

@@ -41,6 +41,14 @@ def train_val(
     # build model
     model = build_model(model_config, exp_config["enable_qat"]).to(DEVICE)
     wandb.log(model_config)
+    if exp_config["given_timestamp"] is not None:
+        checkpoint_path = model_save_dir / "best_model.pth"
+        state_dict = torch.load(
+            checkpoint_path,
+            map_location=DEVICE,
+            weights_only=True,
+        )
+        model.load_state_dict(state_dict, strict=True)
 
     # set up logging
     logger = setup_logger(
@@ -58,7 +66,12 @@ def train_val(
     all_val_epoch_losses = []
     all_val_epoch_f1_scores = []
 
-    qat_warmup_epochs = quant_config.get("qat_warmup_epochs")
+    qat_warmup_epochs = (
+        quant_config.get("qat_warmup_epochs", 0)
+        if quant_config is not None
+        else 0
+    )
+
     for epoch in range(num_epochs):
 
         # training phase
@@ -110,8 +123,8 @@ def train_val(
         metrics = {
             "train_loss": epoch_train_loss,
             "val_loss": epoch_val_loss,
-            **get_classification_metrics("train", train_preds, train_targets),
-            **get_classification_metrics("val", val_preds, val_targets),
+            **get_classification_metrics(phase="train", preds=train_preds, targets=train_targets),
+            **get_classification_metrics(phase="val", preds=val_preds, targets=val_targets),
         }
 
         # Early stopping check

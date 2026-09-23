@@ -1,3 +1,5 @@
+import math
+
 import wandb
 import argparse
 
@@ -45,10 +47,11 @@ def main(args):
     }
 
     # set model config
+    seq_len = math.ceil(args.window_size / args.downsampling_rate)
     model_config = {
         "num_in_features": data_config["num_in_features"],
         "num_out_features": data_config["num_out_features"],
-        "seq_len": int(args.window_size / args.downsampling_rate),
+        "seq_len": seq_len,
         "model_type": args.model_type,
     }
     if model_config["model_type"] == "cnn" or model_config["model_type"] == "sepcnn":

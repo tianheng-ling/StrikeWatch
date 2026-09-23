@@ -1,6 +1,5 @@
-from fp32 import Float1DCNN, Float1DSepCNN, FloatRNN, FloatTransformer
-from quant import Quant1DCNN, Quant1DSepCNN, QuantRNN, QuantTransformer
-
+from .fp32 import Float1DCNN, Float1DSepCNN, FloatRNN, FloatTransformer
+from .quant import Quant1DCNN, Quant1DSepCNN, QuantRNN, QuantTransformer
 
 def build_model(model_config: dict, enable_qat: bool) -> object:
 
