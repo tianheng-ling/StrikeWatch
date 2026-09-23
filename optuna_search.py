@@ -140,6 +140,7 @@ def objective(trial, args):
                     "name": quant_config["model_name"],
                     "quant_bits": quant_config["quant_bits"],
                     "enable_fused_ffn": args.enable_fused_ffn,
+                    "enable_int_forward": False,
                 }
             )
 
