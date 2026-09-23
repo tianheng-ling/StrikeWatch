@@ -92,7 +92,6 @@ def main(args):
             {
                 "name": quant_config["model_name"],
                 "quant_bits": quant_config["quant_bits"],
-                "enable_int_forward": False,
                 "enable_fused_ffn": args.enable_fused_ffn,
             }
         )
@@ -109,7 +108,6 @@ def main(args):
 
         # phase 1: run LOPO
         data_config["data_split_approach"] = "LOPO"
-        exp_config["enable_qat"] = False
         wandb_config["config"].update(
             {
                 **data_config,
@@ -137,7 +135,6 @@ def main(args):
         data_config["data_split_approach"] = "PP"
 
     hw_config = None
-    exp_config["enable_qat"] = args.enable_qat
     if exp_config["enable_qat"] and exp_config["enable_hw_simulation"]:
         hw_config = {
             "top_module": quant_config["model_name"],
